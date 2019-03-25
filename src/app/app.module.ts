@@ -8,6 +8,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CicloviaComponent } from './components/ciclovia/ciclovia.component';
 
 
 
@@ -15,6 +16,7 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent,
+    CicloviaComponent,
   ],
   imports: [
     BrowserModule,
