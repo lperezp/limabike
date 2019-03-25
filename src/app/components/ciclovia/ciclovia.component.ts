@@ -1,4 +1,6 @@
+import { ApiService } from './../../services/api.service';
 import { Component, OnInit } from '@angular/core';
+import { CicloviaInterface } from 'src/app/models/ciclovia-interface';
 
 @Component({
   selector: 'app-ciclovia',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ciclovia.component.scss']
 })
 export class CicloviaComponent implements OnInit {
-
-  constructor() { }
+  ciclovias : CicloviaInterface[] = [];
+  constructor(private apiService : ApiService) { }
 
   ngOnInit() {
+    this.getAllCiclovias();
   }
 
+
+  getAllCiclovias(){
+    this.apiService.getAllCiclovias().subscribe(listaCiclovia =>{
+      this.ciclovias = listaCiclovia;
+      console.log("Lista: ", this.ciclovias)
+    },err =>{
+      console.log("Error!: ",err)
+    })
+  }
 }

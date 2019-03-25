@@ -3,11 +3,15 @@
 </mat-toolbar>
 
 <main>
-  <mat-card>
-    <mat-card-title> Titulo de la tarjeta</mat-card-title>
-    <mat-card-subtitle>Subtítulo de la tarjeta</mat-card-subtitle>
-    <mat-card-content>Contenido</mat-card-content>
-    <mat-card-actions>Acciones</mat-card-actions>
-    <mat-card-footer>Pie</mat-card-footer>
+  <mat-card *ngFor="let ciclovia of ciclovias" >
+    <mat-card-title>{{ ciclovia.nombre }}</mat-card-title>
+    <mat-card-subtitle>Características: {{ ciclovia.caracteristicas }}</mat-card-subtitle>
+    <mat-card-content>
+      <p>Desde: {{ ciclovia.desde }}</p>
+      <p>Hasta: {{ ciclovia.hasta }}</p>
+      <p>Distancia: {{ ciclovia.distancia }}</p>
+      <p>Tipo de Segregación: {{ ciclovia.TipoSegregacion }}</p>
+      <p>Tipo de Ruta: {{ ciclovia.tipoRuta }}</p>
+    </mat-card-content>
   </mat-card>
 </main>
